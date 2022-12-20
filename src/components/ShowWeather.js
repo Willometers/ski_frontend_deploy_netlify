@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 
 
-const WeatherShow = (userLocation) => {  
+const WeatherShow = () => {  
     
     const [weather, setWeather ] = useState()
 
@@ -19,12 +19,14 @@ const WeatherShow = (userLocation) => {
      if (weather.length > 0)
         return (
             <div>
-
+                <h1>Loaded</h1>
             </div>
     )
     else 
         return (
-            <div>Loading</div>
+            <div>
+                <h1>Loading</h1>
+            </div>
         )
     
 }
