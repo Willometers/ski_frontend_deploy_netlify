@@ -6,7 +6,7 @@ const WeatherShow = () => {
     // const [weather, setWeather ] = useState([])
 
     useEffect(() => {
-        fetch('https://visual-crossing-weather.p.rapidapi.com/forecast?aggregateHours=24&location=Washington%2CDC%2CUSA&contentType=csv&unitGroup=us&shortColumnNames=0', options)
+        fetch('https://visual-crossing-weather.p.rapidapi.com/forecast?aggregateHours=24&location=Washington%2CDC%2CUSA&contentType=csv&unitGroup=us&shortColumnNames=0')
 	    .then(response => response.json())
 	    .then(response => console.log(response))
 	    .catch(err => console.error(err));
@@ -14,18 +14,18 @@ const WeatherShow = () => {
 
         // console.log(weather)
 
-     if (weather.length > 0)
+    //  if (weather.length > 0)
         return (
             <div>
                 <h1>Loaded</h1>
             </div>
     )
-    else 
-        return (
-            <div>
-                <h1>Loading</h1>
-            </div>
-        )
+    // else 
+    //     return (
+    //         <div>
+    //             <h1>Loading</h1>
+    //         </div>
+    //     )
     
 }
 
