@@ -6,7 +6,7 @@ const WeatherShow = () => {
     const [weather, setWeather ] = useState([])
 
     useEffect(() => {
-        fetch(`${process.env.REACT_APP_APIKey}&q=13066&aqi=yes`)
+        fetch(`${process.env.REACT_APP_APIKey}&q=13066&aqi=yes`, {mode: 'no-cors'})
         .then ((res) => {
             if (res.ok){
                 res.json().then(setWeather(res))
