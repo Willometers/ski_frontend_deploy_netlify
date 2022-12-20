@@ -7,9 +7,12 @@ function App() {
   return (
     <Router>
       <div>
+
         <h1>Hello</h1>
         <NavBar />
-        </div>
+
+        
+      </div>
     </Router>
   );
 }
