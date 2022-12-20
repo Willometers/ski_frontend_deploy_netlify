@@ -12,7 +12,7 @@ const WeatherShow = () => {
                 res.json().then(setWeather(res))
             }
             else {
-                console.log("error", res.status, res.statusText)
+                res.json().then(console.log("error", res.status, res.statusText, res))
           }}, [])
         })
 
