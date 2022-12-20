@@ -3,20 +3,16 @@ import { useEffect, useState } from "react"
 
 const WeatherShow = () => {  
     
-    const [weather, setWeather ] = useState([])
+    // const [weather, setWeather ] = useState([])
 
     useEffect(() => {
-        fetch(`${process.env.REACT_APP_APIKey}&q=13066&aqi=yes`, {mode: 'no-cors'})
-        .then ((res) => {
-            if (res.ok){
-                res.json().then(setWeather(res))
-            }
-            else {
-                res.json().then(console.log("error", res.status, res.statusText, res))
-          }}, [])
-        })
+        fetch('https://visual-crossing-weather.p.rapidapi.com/forecast?aggregateHours=24&location=Washington%2CDC%2CUSA&contentType=csv&unitGroup=us&shortColumnNames=0', options)
+	    .then(response => response.json())
+	    .then(response => console.log(response))
+	    .catch(err => console.error(err));
+    })
 
-        console.log(weather)
+        // console.log(weather)
 
      if (weather.length > 0)
         return (
