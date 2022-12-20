@@ -13,12 +13,10 @@ const WeatherShow = () => {
         }
     };
 
-
     useEffect(() => {
         fetch('https://visual-crossing-weather.p.rapidapi.com/forecast?aggregateHours=24&location=Washington%2CDC%2CUSA&contentType=csv&unitGroup=us&shortColumnNames=0', options)
-            .then(response => response.json())
-            .then(response => console.log(response))
-            .catch(err => console.error(err));
+        .then(response => response.json())
+        .then(response => console.log(response))
     })
 
         // console.log(weather)
