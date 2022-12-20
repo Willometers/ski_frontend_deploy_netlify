@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 
 const WeatherShow = () => {  
     
-    const [weather, setWeather ] = useState()
+    const [weather, setWeather ] = useState([])
 
     useEffect(() => {
         fetch(`${process.env.REACT_APP_APIKey}&q=13066&aqi=yes`)
@@ -13,8 +13,10 @@ const WeatherShow = () => {
             }
             else {
                 console.log("error", res.status, res.statusText)
-          }})
+          }}, [])
         })
+
+        console.log(weather)
 
      if (weather.length > 0)
         return (
