@@ -6,9 +6,10 @@ const WeatherShow = () => {
     const [weather, setWeather ] = useState([])
 
     useEffect(() => {
-        fetch()
+        fetch(`https://api.weatherapi.com/v1/current.json?key=${process.env.REACT_APP_WEATHERKey}}&q=13066&aqi=no`)
             .then(response => response.json())
             .then(response => setWeather(response))
+            .then(console.log(weather))
     }, [])
 
         
