@@ -6,14 +6,14 @@ const WeatherShow = () => {
     const [weather, setWeather ] = useState([])
 
     useEffect(() => {
-        fetch(`https://api.weatherapi.com/v1/current.json?key=${process.env.REACT_APP_WEATHERKey}&q=13066&aqi=no`)
+        fetch(`https://api.weatherapi.com/v1/current.json?key=${process.env.REACT_APP_WEATHERKey}&q=13066&aqi=no`, {mode: "no-cors"})
             .then(res => res.json())
             .then(res => console.log(res))
             .then(res => setWeather(res))
     }, [])
 
         
-     if (weather.length > 0)
+     if (weather)
         return (
             <div>
                 <h1>Loaded</h1>
