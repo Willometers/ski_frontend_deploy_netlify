@@ -4,10 +4,12 @@ import { useState, useEffect } from "react";
 const WeatherShow = () => {  
     
     const [weather, setWeather ] = useState([])
+    const [error, setError ] = useState([])
 
     useEffect(() => {
         fetch(`https://api.weatherapi.com/v1/current.json?key=${process.env.REACT_APP_WEATHERKey}&q=13066&aqi=no`)
             .then(res => res.json())
+            .catch(res => setError(res))
             .then(res => setWeather(res))
     }, [])
 
@@ -25,7 +27,7 @@ const WeatherShow = () => {
     else 
         return (
             <div>
-                <h1>Loading</h1>
+                <h1>{error}</h1>
             </div>
         )
     
