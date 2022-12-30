@@ -8,17 +8,20 @@ const WeatherShow = () => {
     useEffect(() => {
         fetch(`https://api.weatherapi.com/v1/current.json?key=${process.env.REACT_APP_WEATHERKey}&q=13066&aqi=no`)
             .then(res => res.json())
-            .then(res => console.log("res cons", res))
             .then(res => setWeather(res))
     }, [])
 
-        
-     if (weather)
-        return (
-            <div>
-                <h1>Loaded</h1>
-            </div>
-    )
+        if (weather.location)
+            console.log("state", weather.current.condition.text)
+
+     if (weather.location)
+            return (
+                <div>
+                    <h1>Loaded</h1>
+                    <h1>{weather.location.name}</h1>
+                    <h2>{weather.current.condition.text}</h2>
+                </div>
+            )
     else 
         return (
             <div>
