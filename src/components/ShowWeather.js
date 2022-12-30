@@ -8,7 +8,7 @@ const WeatherShow = () => {
     useEffect(() => {
         fetch(`https://api.weatherapi.com/v1/current.json?key=${process.env.REACT_APP_WEATHERKey}&q=13066&aqi=no`)
             .then(res => res.json())
-            .then(res => console.log(res))
+            .then(res => console.log("res cons", res))
             .then(res => setWeather(res))
     }, [])
 
