@@ -3,25 +3,23 @@ import { useState, useEffect } from "react";
 
 const WeatherShow = () => {  
     
-    const [weather, setWeather ] = useState([])
+    const [currentUser, setcurrentUser ] = useState([])
     // const [error, setError ] = useState([])
 
     useEffect(() => {
-        fetch(`https://api.weatherapi.com/v1/current.json?key=${process.env.REACT_APP_WEATHERKey}&q=13066&aqi=no`, {mode:'cors'})
+        fetch(`https://rails-2n88.onrender.com/me`)
             .then(res => res.json())
             // .catch(res => setError(res))
-            .then(res => setWeather(res))
+            .then(res => setcurrentUser(res))
     }, [])
 
-        if (weather.location)
-            console.log("state", weather.current.condition.text)
+    if (currentUser)
+        console.log("state", currentUser)
 
-     if (weather.location)
+     if (currentUser)
             return (
                 <div>
                     <h1>Loaded</h1>
-                    <h1>{weather.location.name}</h1>
-                    <h2>{weather.current.condition.text}</h2>
                 </div>
             )
     else 
